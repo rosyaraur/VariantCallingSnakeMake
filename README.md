@@ -4,7 +4,7 @@ A robust, reproducible, and scalable Snakemake pipeline designed to identify hig
 
 To drastically reduce false-positive rates, this pipeline utilizes an orthogonal calling strategy. It runs both local de-novo assembly (GATK HaplotypeCaller) and Bayesian haplotype-based calling (Freebayes), intersecting the results via a custom Python implementation to produce a highly accurate consensus variant set.
 
-🧬 Pipeline Architecture
+🧬 **Pipeline Architecture**
 
 ```mermaid
 graph TD
@@ -74,7 +74,7 @@ graph TD
 ```
 
 
-##Features
+**Features**
 
 Fully Automated: Managed end-to-end by Snakemake.
 
@@ -86,18 +86,18 @@ Robust Merging: Uses a native Python set-intersection script to bypass common bc
 
 Comprehensive QC: Aggregates mapping, duplication, and annotation metrics into a single interactive MultiQC report.
 
- ##Prerequisites
+**Prerequisites**
 
 You will need Conda (preferably mamba for much faster environment solving) and Snakemake installed on your system.
 
-# Install Mamba (if not already installed)
+**Install Mamba (if not already installed)**
 ```conda install -n base -c conda-forge mamba```
 
-# Install Snakemake
+**Install Snakemake**
 ```mamba create -c conda-forge -c bioconda -n snakemake snakemake```
 
 
-🚀 Usage
+**Usage**
 
 1. Clone the Repository & Setup Directory
 
@@ -123,14 +123,14 @@ VariantCallingPipeline/
 
 Open the Snakefile in a text editor and update the inputs at the top of the file:
 
-# Update with your actual sample names
+**Update with your actual sample names**
 
 ```SAMPLES = ["Patient1", "Patient2", "Control1"]``` 
 
-# Point to your reference genome
+**Point to your reference genome**
 ```REF = "reference/hg38.fa"```
 
-# Specify the SnpEff database for your organism
+**Specify the SnpEff database for your organism**
 ```SNPEFF_DB = "GRCh38.105"``` 
 
 
@@ -149,13 +149,13 @@ This will build the DAG and show you exactly what will be executed without actua
 snakemake -n``
 
 
-Full Production Run:
+**Full Production Run:**
 Run the pipeline, allowing it to use all available cores. We recommend running this inside a tmux or screen session on your Linux server.
 
 ```snakemake --use-conda --conda-frontend mamba --cores all```
 
 
-📂 Key Outputs
+**Key Output**
 
 Upon successful completion, the results/ directory will contain:
 
