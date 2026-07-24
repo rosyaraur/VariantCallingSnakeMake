@@ -1,0 +1,9 @@
+name: mapping
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bwa
+  - samtools
+  - picard
+  - gatk4

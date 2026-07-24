@@ -1,0 +1,8 @@
+name: calling
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - freebayes
+  - gatk4
+  - bcftools
